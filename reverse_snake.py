@@ -98,15 +98,9 @@ class Snake:
         
         # When switching direction, reverse the body list so head becomes tail
         # This creates the visual effect of the snake "flipping around"
-        if self.moving_backwards:
-            self.body.reverse()
-            # Also reverse the direction vector
-            self.direction = (-self.direction[0], -self.direction[1])
-        else:
-            # When switching back to forwards, reverse again to restore original orientation
-            self.body.reverse()
-            # Restore direction
-            self.direction = (-self.direction[0], -self.direction[1])
+        self.body.reverse()
+        # Also reverse the direction vector
+        self.direction = (-self.direction[0], -self.direction[1])
         
         # Grow the snake
         self.grow_next = True
